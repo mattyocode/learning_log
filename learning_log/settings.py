@@ -31,9 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    #My apps
+    # My apps.
     'learning_logs',
-    #Default Django apps
+    'app_users',
+
+    # Third party apps.
+    'bootstrap4',
+
+    # Default Django apps.
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,3 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# My settings.
+LOGIN_URL = 'app_users:login'
+
+# Heroku settings.
+import django_heroku
+django_heroku.settings(locals())
